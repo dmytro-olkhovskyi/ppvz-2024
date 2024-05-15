@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PracticesController;
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,8 +17,10 @@ use App\Http\Controllers\PracticesController;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
 
 Route::get('/practices', [PracticesController::class, 'show']);
 
 // Route::get('/practices/practice-01', [PracticesController::class, 'practice01']);
+
+Route::resource('posts', PostController::class);
